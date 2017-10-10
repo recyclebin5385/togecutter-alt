@@ -4,7 +4,7 @@
 // @description togetterの特定ユーザのコメントを見えなくする
 // @include     https://togetter.com/li/*
 // @include     http://togetter.com/li/*
-// @version     1
+// @version     2
 // @grant       none
 // ==/UserScript==
 
@@ -132,7 +132,7 @@ function hideUsers() {
 
         if ($.inArray(id, hiddenUserIds) != -1) {
             listItem.find(".list_box").hide();
-            if (listItem.find(".removed").size() == 0) {
+            if (listItem.find(".removed").length == 0) {
                 $("<span>[削除済]</span>")
                     .hide()
                     .addClass("removed")
