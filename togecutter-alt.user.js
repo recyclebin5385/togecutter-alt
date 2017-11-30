@@ -4,7 +4,7 @@
 // @description togetterの特定ユーザのコメントを見えなくする
 // @include     https://togetter.com/li/*
 // @include     http://togetter.com/li/*
-// @version     2
+// @version     3
 // @grant       none
 // ==/UserScript==
 
@@ -131,7 +131,7 @@ function hideUsers() {
         var id = idLink.text().replace(/^@/, "");
 
         if ($.inArray(id, hiddenUserIds) != -1) {
-            listItem.find(".list_box").hide();
+            listItem.find(".list_tweet_box").hide();
             if (listItem.find(".removed").length == 0) {
                 $("<span>[削除済]</span>")
                     .hide()
@@ -148,7 +148,7 @@ function hideUsers() {
             }
             listItem.find(".removed").show();
         } else {
-            listItem.find(".list_box").show();
+            listItem.find(".list_tweet_box").show();
             listItem.find(".removed").hide();
         }
     });
