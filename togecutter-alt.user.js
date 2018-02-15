@@ -4,7 +4,8 @@
 // @description togetterの特定ユーザのコメントを見えなくする
 // @include     https://togetter.com/li/*
 // @include     http://togetter.com/li/*
-// @version     3
+// @require     https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+// @version     4
 // @grant       none
 // ==/UserScript==
 
