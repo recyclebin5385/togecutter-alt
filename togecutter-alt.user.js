@@ -5,7 +5,7 @@
 // @include     https://togetter.com/li/*
 // @include     http://togetter.com/li/*
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
-// @version     5
+// @version     6
 // @grant       none
 // ==/UserScript==
 
@@ -129,7 +129,7 @@
     function hideUsers() {
         var hiddenUserIds = getHiddenUserIds();
 
-        $("#comment_box li").each(function(){
+        $("#comment_box .list_box").each(function(){
             var listItem = $(this);
             var idLink = $(this).find("a.status_name");
             var id = idLink.text().replace(/^@/, "");
@@ -159,7 +159,7 @@
     }
 
     $(function() {
-        $("#comment_box li").each(function(){
+        $("#comment_box .list_box").each(function(){
             var listItem = $(this);
             var idLink = listItem.find("a.status_name");
             var id = idLink.text().replace(/^@/, "");
