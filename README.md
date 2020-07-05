@@ -9,4 +9,12 @@ togetterのまとめのコメントのうち、特定のユーザが作成した
 
 連絡先
 ------
+
 recyclebin5385[at]yahoo.co.jp ([at]を@に置換してください)
+
+謝辞
+----
+
+chromia様、修正ありがとうございます。
+動作に問題なさそうなので以下のコードをそのまま使わせていただきます。
+https://gist.github.com/chromia/6502104fc76417cdc17c593f8ffed9e4

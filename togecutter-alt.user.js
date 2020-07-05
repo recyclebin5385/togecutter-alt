@@ -5,7 +5,7 @@
 // @include     https://togetter.com/li/*
 // @include     http://togetter.com/li/*
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
-// @version     6
+// @version     7
 // @grant       none
 // ==/UserScript==
 
@@ -131,11 +131,12 @@
 
         $("#comment_box .list_box").each(function(){
             var listItem = $(this);
-            var idLink = $(this).find("a.status_name");
+            var idLink = $(this).find(".status_name");
             var id = idLink.text().replace(/^@/, "");
 
             if ($.inArray(id, hiddenUserIds) != -1) {
-                listItem.find(".list_tweet_box").hide();
+                listItem.find("> span").hide();
+                listItem.find(".comment").hide();
                 if (listItem.find(".removed").length == 0) {
                     $("<span>[削除済]</span>")
                         .hide()
@@ -152,7 +153,8 @@
                 }
                 listItem.find(".removed").show();
             } else {
-                listItem.find(".list_tweet_box").show();
+                listItem.find("> span").show();
+                listItem.find(".comment").show();
                 listItem.find(".removed").hide();
             }
         });
@@ -161,11 +163,11 @@
     $(function() {
         $("#comment_box .list_box").each(function(){
             var listItem = $(this);
-            var idLink = listItem.find("a.status_name");
+            var idLink = listItem.find(".status_name");
             var id = idLink.text().replace(/^@/, "");
 
             $("<span>[×]</span>")
-                .addClass("status_name")
+                .addClass("button_cutter")
                 .css({"cursor": "pointer"})
                 .attr("title", "このユーザのコメントを見えなくする")
                 .click(function() {
